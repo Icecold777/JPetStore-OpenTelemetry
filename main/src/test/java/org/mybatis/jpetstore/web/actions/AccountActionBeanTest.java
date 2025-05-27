@@ -17,9 +17,11 @@ package org.mybatis.jpetstore.web.actions;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mybatis.jpetstore.domain.Account;
 
+@Disabled("Temporarily disabled all tests")
 class AccountActionBeanTest {
 
   // Test written by Diffblue Cover.

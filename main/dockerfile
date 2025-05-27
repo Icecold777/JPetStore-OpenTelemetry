@@ -16,8 +16,19 @@
 
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /jpetstore
-COPY .mvn/ .mvn
+
+# Install dos2unix to handle Windows line endings
+RUN apt-get update && apt-get install -y dos2unix
+
+# Copy Maven wrapper files
+COPY .mvn/ .mvn/
 COPY mvnw mvnw.cmd pom.xml format.xml renovate.json ./
+
+# Convert line endings and set permissions
+RUN dos2unix mvnw && chmod +x mvnw
+
+# Copy source code and build
 COPY ./src ./src
 RUN ./mvnw clean package
+
 CMD ["./mvnw", "cargo:run", "-P", "tomcat90"]

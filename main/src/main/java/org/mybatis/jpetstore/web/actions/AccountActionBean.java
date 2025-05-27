@@ -76,7 +76,7 @@ public class AccountActionBean extends AbstractActionBean {
   }
 
   public String getUsername() {
-    return account.getUsername();
+    return account != null ? account.getUsername() : null;
   }
 
   @Validate(required = true, on = { "signon", "newAccount", "editAccount" })

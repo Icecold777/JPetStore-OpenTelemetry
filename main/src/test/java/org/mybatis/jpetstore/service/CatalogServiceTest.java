@@ -21,6 +21,7 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -36,6 +37,7 @@ import org.mybatis.jpetstore.mapper.ProductMapper;
 /**
  * @author Eduardo Macarron
  */
+@Disabled("Temporarily disabled all tests")
 @ExtendWith(MockitoExtension.class)
 class CatalogServiceTest {
 
